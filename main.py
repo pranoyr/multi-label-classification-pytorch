@@ -55,10 +55,10 @@ def main():
 	training_data = get_training_set(opt, train_transform)
 	validation_data = get_validation_set(opt, test_transform)
 	
-	n_train_examples = int(len(training_data)*0.8)
-	n_valid_examples = len(training_data) - n_train_examples
-	# split data
-	training_data, validation_data = torch.utils.data.random_split(training_data, [n_train_examples, n_valid_examples])
+	# n_train_examples = int(len(training_data)*0.8)
+	# n_valid_examples = len(training_data) - n_train_examples
+	# # split data
+	# training_data, validation_data = torch.utils.data.random_split(training_data, [n_train_examples, n_valid_examples])
 
 	train_loader = torch.utils.data.DataLoader(training_data,
 											   batch_size=opt.batch_size,
@@ -116,8 +116,7 @@ def main():
 	#th = 10000
 	for epoch in range(start_epoch, opt.epochs+1):
 		# train, test model
-		train_loss, train_mAP = train_epoch(
-			model, train_loader, criterion, optimizer, epoch, device, opt)
+		train_loss, train_mAP = train_epoch(model, train_loader, criterion, optimizer, epoch, device, opt)
 		val_loss, val_mAP = val_epoch(model, val_loader, criterion, device, opt)
 
 		# if val_loss < th:
