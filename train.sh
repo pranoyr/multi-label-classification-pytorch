@@ -1,0 +1,2 @@
+python main.py --root_dir /Volumes/Seagate/Neuroplex/car_colour_make_model/images --train_path /Volumes/Seagate/Neuroplex/car_colour_make_model/annotations.csv  --val_path /Volumes/Seagate/Neuroplex/car_colour_make_model/annotations.csv --dataset vehicle_attributes  --num_classes 40  --img_H 150 --img_W 150
+python main.py  --val_path /home/neuroplex/data/PETA_DATASET/ --train_path /home/neuroplex/data/PETA_DATASET/ --dataset human_attributes  --num_classes 109 --img_H 200 --img_W 100
