@@ -19,7 +19,6 @@ from torch.optim import lr_scheduler
 from dataset import get_training_set, get_validation_set
 
 
-
 def main():
 	opt = parse_opts()
 	print(opt)

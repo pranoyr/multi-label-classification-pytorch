@@ -17,7 +17,7 @@ def class_mapping():
 			  'purple', 'yellow', 'pink' ,' unknowncolor','golden' ,'orange', 'maruti' ,'hyundai', 'renault', 'honda' ,'tata',
 			  'mahindra', 'toyota' ,'hindustan', 'sedan' ,'jeep' ,'bmw' ,'volkswagen',
 			  'chevrolet' ,'ford', 'fiat' ,'nissan' ,'mercedes' , 'hundai',
-			  'datson', 'force', 'datsun', 'jaguar', 'hatchback' , 'suv' , 'van', ' unknownmake']
+			  'datson', 'force', 'datsun', 'jaguar', 'hatchback' , 'suv' , 'van', ' unknownmake', '']
 	for i, label in enumerate(labels):
 		class_to_idx[label] = i
 	return class_to_idx
