@@ -14,7 +14,7 @@ import pandas as pd
 def class_mapping():
 	class_to_idx = {}
 	labels = ['white', 'silver', 'red', 'black', 'maroon' ,'gray' ,'blue' ,'grey' ,'brown',
-			  'purple', 'yellow', 'pink' ,'unknowncolor','golden' ,'orange', 'maruti' ,'hyundai', 'renault', 'honda' ,'tata',
+			  'purple', 'yellow', 'pink' ,' unknowncolor','golden' ,'orange', 'maruti' ,'hyundai', 'renault', 'honda' ,'tata',
 			  'mahindra', 'toyota' ,'hindustan', 'sedan' ,'jeep' ,'bmw' ,'volkswagen',
 			  'chevrolet' ,'ford', 'fiat' ,'nissan' ,'mercedes' , 'hundai',
 			  'datson', 'force', 'datsun', 'jaguar', 'hatchback' , 'suv' , 'van']
