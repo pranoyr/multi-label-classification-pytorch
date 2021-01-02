@@ -34,9 +34,7 @@ def integer_encode(label, class_to_idx):
 	""" Convert names to labels.
 	"""
 	out = []
-	for each_label in label:
-		print("each label")
-		print(label)
+	for each_label in labels:
 		each_label = class_to_idx[each_label]
 		out.append(each_label)
 	return out
