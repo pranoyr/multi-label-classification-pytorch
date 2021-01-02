@@ -21,7 +21,7 @@ from dataset import get_training_set, get_validation_set
 
 def main():
 	opt = parse_opts()
-	#print(opt)
+	print(opt)
 
 	seed = 0
 	random.seed(seed)
@@ -67,7 +67,7 @@ def main():
 											 batch_size=opt.batch_size,
 											 shuffle=True,
 											 num_workers=1)
-	print(f'Number of training examples: {len(train_loader.dataset)}')
+	#print(f'Number of training examples: {len(train_loader.dataset)}')
 	print(f'Number of validation examples: {len(val_loader.dataset)}')
 
 	# tensorboard
