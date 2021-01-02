@@ -21,7 +21,7 @@ from dataset import get_training_set, get_validation_set
 
 def main():
 	opt = parse_opts()
-	print(opt)
+	#print(opt)
 
 	seed = 0
 	random.seed(seed)
@@ -34,8 +34,6 @@ def main():
 	use_cuda = torch.cuda.is_available()
 	device = torch.device(f"cuda:{opt.gpu}" if use_cuda else "cpu")
 
-	print("Device selected")
-	
 	train_transform = transforms.Compose([
 		#transforms.RandomCrop(32, padding=3),
 		transforms.Resize((opt.img_H, opt.img_W)),
