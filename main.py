@@ -32,7 +32,7 @@ def main():
 
 	# CUDA for PyTorch
 	use_cuda = torch.cuda.is_available()
-	device = torch.device(f"cuda:{opt.gpu}" if use_cuda else "cpu")
+	device = torch.device(f"cuda:1" if use_cuda else "cpu")
 
 	train_transform = transforms.Compose([
 		#transforms.RandomCrop(32, padding=3),
