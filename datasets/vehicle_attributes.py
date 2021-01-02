@@ -13,11 +13,11 @@ import pandas as pd
 
 def class_mapping():
 	class_to_idx = {}
-	labels = ['white', 'silver', 'red', 'black', 'maroon' ,'gray' ,'blue' ,'grey' ,'brown',
-			  'purple', 'yellow', 'pink' ,'unknown' ,'golden' ,'orange', 'maruti' ,'hyundai', 'renault', 'honda' ,'tata',
-			  'mahindra', 'toyota' ,'hindustan', 'sedan' ,'jeep' ,'bmw' ,'volkswagen',
-			  'chevrolet' ,'ford', 'fiat' ,'nissan' ,'mercedes' , 'hundai',
-			  'datson', 'force', 'datsun', 'jaguar', 'hatchback' , 'suv' , 'van']
+	labels = ['white', 'silver', 'red', 'black', 'maroon' ,'gray', 'blue', 'grey', 'brown',
+			  'purple', 'yellow', 'pink', 'unknown', 'golden', 'orange', 'maruti', 'hyundai', 
+			  'renault', 'honda', 'tata', 'mahindra', 'toyota', 'hindustan', 'sedan', 'jeep' ,
+			  'bmw', 'volkswagen', 'chevrolet', 'ford', 'fiat', 'nissan', 'mercedes', 'hundai',
+			  'datson', 'force', 'datsun', 'jaguar', 'hatchback', 'suv', 'van']
 	for i, label in enumerate(labels):
 		class_to_idx[label] = i
 	return class_to_idx
@@ -34,7 +34,7 @@ def integer_encode(label, class_to_idx):
 	""" Convert names to labels.
 	"""
 	out = []
-	for each_label in labels:
+	for each_label in label:
 		each_label = class_to_idx[each_label]
 		out.append(each_label)
 	return out
