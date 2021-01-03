@@ -67,7 +67,7 @@ def main():
 											 batch_size=opt.batch_size,
 											 shuffle=True,
 											 num_workers=1)
-	#print(f'Number of training examples: {len(train_loader.dataset)}')
+	print(f'Number of training examples: {len(train_loader.dataset)}')
 	print(f'Number of validation examples: {len(val_loader.dataset)}')
 
 	# tensorboard
@@ -134,8 +134,8 @@ def main():
 
 			state = {'epoch': epoch, 'model_state_dict': model.state_dict(),
 					'optimizer_state_dict': optimizer.state_dict()}
-			torch.save(state, os.path.join('snapshots', f'model{epoch}.pth'))
-			print("Epoch {} model saved!\n".format(epoch))
+			#torch.save(state, os.path.join('snapshots', f'model{epoch}.pth'))
+			#print("Epoch {} model saved!\n".format(epoch))
 		#th = val_loss
 
 
