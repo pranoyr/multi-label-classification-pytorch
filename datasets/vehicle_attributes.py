@@ -73,7 +73,7 @@ class VehicleAttributes(data.Dataset):
 		# ---- Get Labels ----
 		label = self.data[index][1:4]   # [yellow,sedan]
 		label = integer_encode(label, self.class_to_idx) # [0,2]
-		label = one_hot_encode(label, num_classes=self.num_classes) 
+		label = one_hot_encode(label, num_classes=self.num_classes) #[101000000000000]
 
 		target = torch.Tensor(label)
 		return img, target
