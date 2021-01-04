@@ -58,7 +58,7 @@ class VehicleAttributes(data.Dataset):
 		self.transform = transform
 		self.num_classes = num_classes
 
-		self.data, self.class_to_idx = make_dataset(csv_file)
+		self.data, self.class_to_idx = make_dataset(csv_file)   # self.data =   [ (filename, yelloe,sedan), (filename, yelloe,sedan) ]
 
 	def __len__(self):
 		'Denotes the total number of samples'
