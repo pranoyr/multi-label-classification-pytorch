@@ -21,7 +21,7 @@ from dataset import get_training_set, get_validation_set
 
 def main():
 	opt = parse_opts()
-	#print(opt)
+	print(opt)
 
 	seed = 0
 	random.seed(seed)
