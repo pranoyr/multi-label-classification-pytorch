@@ -44,10 +44,8 @@ def one_hot_encode(integer_encodings, num_classes):
 	""" One hot encode for multi-label classification.
 	"""
 	onehot_encoded = [0 for _ in range(num_classes)]
-	print(onehot_encoded)
 	for value in integer_encodings:
-		onehot_encoded[value] = 1
-		print(onehot_encoded)
+		onehot_encoded[value] = 1	
 	return onehot_encoded
 
 
