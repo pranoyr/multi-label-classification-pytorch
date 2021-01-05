@@ -35,11 +35,8 @@ def integer_encode(label, class_to_idx):
 	"""
 	out = []
 	for each_label in label:
-		print(each_label)
 		each_label = class_to_idx[each_label]
-		print(each_label)
 		out.append(each_label)
-		print(out)
 	return out
 
 
@@ -47,8 +44,10 @@ def one_hot_encode(integer_encodings, num_classes):
 	""" One hot encode for multi-label classification.
 	"""
 	onehot_encoded = [0 for _ in range(num_classes)]
+	print(onehot_encoded)
 	for value in integer_encodings:
 		onehot_encoded[value] = 1
+		print(onehot_encoded)
 	return onehot_encoded
 
 
