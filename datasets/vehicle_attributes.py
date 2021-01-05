@@ -25,11 +25,8 @@ def class_mapping():
 
 def make_dataset(csv_file):
 	class_to_idx = class_mapping()
-	print(class_to_idx)
 	dataset = pd.read_csv(csv_file)
-	print(dataset)
 	dataset = dataset.values.tolist()
-	print(dataset)
 	return dataset, class_to_idx
 
 
@@ -38,8 +35,11 @@ def integer_encode(label, class_to_idx):
 	"""
 	out = []
 	for each_label in label:
+		print(each_label)
 		each_label = class_to_idx[each_label]
+		print(each_label)
 		out.append(each_label)
+		print(out)
 	return out
 
 
