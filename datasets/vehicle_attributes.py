@@ -25,8 +25,11 @@ def class_mapping():
 
 def make_dataset(csv_file):
 	class_to_idx = class_mapping()
+	print(class_to_idx)
 	dataset = pd.read_csv(csv_file)
+	print(dataset)
 	dataset = dataset.values.tolist()
+	print(dataset)
 	return dataset, class_to_idx
 
 
