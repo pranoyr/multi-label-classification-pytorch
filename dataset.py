@@ -1,6 +1,6 @@
 from datasets.vehicle_attributes import VehicleAttributes
 from datasets.human_attributes import HumanAttributes
-
+from datasets.veri_vehicle import VeriVehicle
 
 def get_training_set(opt, transform):
     if opt.dataset == 'vehicle_attributes':
@@ -14,7 +14,14 @@ def get_training_set(opt, transform):
             opt.train_path,
             opt.num_classes,
             transform = transform)
+    if opt.dataset == 'veri_vehicle':
+        training_data = VeriVehicle(
+            opt.veri_dir,
+            opt.veri_train_path,
+            opt.num_classes,
+            transform = transform)            
     return training_data
+
 
 
 def get_validation_set(opt, transform):
@@ -29,4 +36,10 @@ def get_validation_set(opt, transform):
             opt.val_path,
             opt.num_classes,
             transform = transform)
+    if opt.dataset == 'veri_vehicle':
+        validation_data = veri_vehicle(
+            opt.veri_dir,
+            opt.veri_val_path,
+            opt.num_classes,
+            transform=transform)            
     return validation_data

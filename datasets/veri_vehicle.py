@@ -48,12 +48,12 @@ def one_hot_encode(integer_encodings, num_classes):
 	return onehot_encoded
 
 
-class VehicleAttributes(data.Dataset):
+class VeriVehicle(data.Dataset):
 	'Characterizes a dataset for PyTorch'
 
 	def __init__(self, root_dir, csv_file, num_classes, transform=None):
 		'Initialization'
-		self.root_dir = root_dir
+		self.root_dir = veri_dir
 		self.transform = transform
 		self.num_classes = num_classes
 
@@ -66,7 +66,7 @@ class VehicleAttributes(data.Dataset):
 	def __getitem__(self, index):
 		'Generates one sample of data'
 		# ---- Get Images ----
-		img = Image.open(os.path.join(self.root_dir, self.data[index][0]))
+		img = Image.open(os.path.join(self.veri_dir, self.data[index][0]))
 		img = self.transform(img)
 
 		# ---- Get Labels ----
