@@ -10,7 +10,7 @@ import argparse
 import tensorboardX
 import os
 import random
-from utils.utils import AverageMeter, Metric
+from utils.util import AverageMeter, Metric
 import numpy as np
 
 def train_epoch(model, data_loader, criterion, optimizer, epoch, device, opt):
