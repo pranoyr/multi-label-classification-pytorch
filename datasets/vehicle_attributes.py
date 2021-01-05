@@ -19,9 +19,7 @@ def class_mapping():
 			  'bmw', 'volkswagen', 'chevrolet', 'ford', 'fiat', 'nissan', 'mercedes', 'hundai',
 			  'datson', 'force', 'datsun', 'jaguar', 'hatchback', 'suv', 'van']
 	for i, label in enumerate(labels):
-		print(labels)
 		class_to_idx[label] = i
-		print(class_to_idx)
 	return class_to_idx
 
 
