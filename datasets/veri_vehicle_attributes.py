@@ -44,7 +44,7 @@ def class_mapping():
 
 def make_dataset(xml_file):
 	class_to_idx = class_mapping()
-	veri_dataset = pd.read_xml(xml_file)
+	veri_dataset = read_xml(xml_file)
 	return veri_dataset, class_to_idx
 
 
