@@ -16,8 +16,8 @@ def get_training_set(opt, transform):
             transform = transform)
     if opt.dataset == 'veri_vehicle_attributes':
         training_data = VeriVehicleAttributes(
-            opt.veri_root_dir,
-            opt.veri_train_path,
+            os.path.join(opt.root_dir,'image_train'),
+            opt.train_path,
             opt.num_classes,
             transform = transform)
     return training_data
@@ -37,8 +37,8 @@ def get_validation_set(opt, transform):
             transform = transform)
     if opt.dataset == 'veri_vehicle_attributes':
         validation_data = VeriVehicleAttributes(
-            opt.veri_root_dir,
-            opt.veri_val_path,
+            os.path.join(opt.root_dir,'image_test'),
+            opt.val_path,
             opt.num_classes,
             transform = transform)
     return validation_data
