@@ -54,8 +54,8 @@ def integer_encode(label, class_to_idx):
 	out = []
 	for each_label in label:
 		each_label = class_to_idx[each_label]
-		veri_out.append(each_label)
-	return veri_out
+		out.append(each_label)
+	return out
 
 
 def one_hot_encode(integer_encodings, num_classes):
