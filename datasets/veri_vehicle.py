@@ -1,6 +1,6 @@
 import os
 from pickle import dump
-from xml.dom import minidom
+import xml.etree.ElementTree as ET
 import torch
 import cv2
 from torch.utils import data
@@ -12,6 +12,8 @@ import pickle as pk
 import pandas as pd
 
 
+
+
 def class_mapping():
 	class_to_idx = {}
 	labels = ['yellow', 'orange', 'green', 'gray' ,'red', 'blue', 'white',
@@ -21,10 +23,18 @@ def class_mapping():
 		class_to_idx[label] = i
 	return class_to_idx
 
+def colour_mapping():
+    id_to_colour = {}
 
-def make_dataset(csv_file):
+def type_mapping():
+    id_to_type = {}    
+
+def parse_xml(xml_file):
 	class_to_idx = class_mapping()
-	dataset = pd.read_csv(csv_file)
+    tree = ET.parse(xml_file)
+    root = tree.getroot()
+    
+	
 	dataset = dataset.values.tolist()
 	return dataset, class_to_idx
 
