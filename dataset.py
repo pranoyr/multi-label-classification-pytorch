@@ -1,6 +1,6 @@
 from datasets.vehicle_attributes import VehicleAttributes
 from datasets.human_attributes import HumanAttributes
-from datasets.veri_vehicle import VeriVehicle
+#from datasets.veri_vehicle import VeriVehicle
 
 def get_training_set(opt, transform):
     if opt.dataset == 'vehicle_attributes':
