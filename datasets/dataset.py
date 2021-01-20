@@ -13,6 +13,7 @@ def integer_encode(label, word2int):
     """ Convert names to labels.
     """
     out = []
+    print(out)
     for each_label in label:
         each_label = word2int[each_label]
         out.append(each_label)
