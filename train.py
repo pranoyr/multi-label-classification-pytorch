@@ -42,7 +42,7 @@ def train_epoch(model, data_loader, criterion, optimizer, epoch, device, opt):
         if (i+1) % opt.log_interval == 0:
             avg_loss = train_loss / opt.log_interval
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
-                epoch, losses.count, len(data_loader.dataset), 100. * (i + 1) / len(data_loader), avg_loss))
+                epoch, losses.count, len(data_loader.dataset), 1. * (i + 1) / len(data_loader), avg_loss))
             train_loss = 0.0
 
     # show information
