@@ -135,7 +135,8 @@ def main():
 			state = {'epoch': epoch, 'model_state_dict': model.state_dict(),
 					'optimizer_state_dict': optimizer.state_dict()}
 			#torch.save(state, os.path.join('snapshots', f'model{epoch}.pth'))
-			#print("Epoch {} model saved!\n".format(epoch))
+			torch.save(state, os.path.join('/home/neuroplex/code/internship/pauls/multi-label-classification-pytorch/models/saved', f'model{epoch}.pth'))
+			print("Epoch {} model saved!\n".format(epoch))
 		#th = val_loss
 
 
