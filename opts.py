@@ -15,9 +15,9 @@ def parse_opts():
 	parser.set_defaults(nesterov=False)
 	parser.add_argument("--n_cpu", type=int, default=8,
 						help="number of cpu threads to use during batch generation")
-	parser.add_argument("--img_H", type=int, default=32,
+	parser.add_argument("--img_H", type=int, default=150,
 						help="Image Height")
-	parser.add_argument("--img_W", type=int, default=32,
+	parser.add_argument("--img_W", type=int, default=150,
 						help="Image Width")
 	parser.add_argument("--checkpoint_interval", type=int,
 						default=1, help="interval between saving model weights")
