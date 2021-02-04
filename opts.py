@@ -35,7 +35,7 @@ def parse_opts():
 						default=None, help="resume training")
 	parser.add_argument("--save_interval", type=int,
 						default=1, help="saving weights interval")
-	parser.add_argument('--lr_patience', default=10, type=int,
+	parser.add_argument('--lr_patience', default=5, type=int,
 						help='Patience of LR scheduler. See documentation of ReduceLROnPlateau.')
 	parser.add_argument("--gpu", type=int,
 						default=0, help="gpu id")

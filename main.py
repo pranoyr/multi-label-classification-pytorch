@@ -117,11 +117,10 @@ def main():
 		# train, test model
 		train_loss, train_mAP = train_epoch(model, train_loader, criterion, optimizer, epoch, device, opt)
 		val_loss, val_mAP = val_epoch(model, val_loader, criterion, device, opt)
-
+		scheduler.step(val_loss)
 		# if val_loss < th:
 		# saving weights to checkpoint
 		if (epoch) % opt.save_interval == 0:
-			scheduler.step(val_loss)
 			# write summary
 			summary_writer.add_scalar(
 				'losses/train_loss', train_loss, global_step=epoch)
