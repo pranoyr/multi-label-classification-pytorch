@@ -118,6 +118,8 @@ def main():
 		train_loss, train_mAP = train_epoch(model, train_loader, criterion, optimizer, epoch, device, opt)
 		val_loss, val_mAP = val_epoch(model, val_loader, criterion, device, opt)
 		scheduler.step(val_loss)
+
+		lr = optimizer.param_groups[0]['lr']  
 		# if val_loss < th:
 		# saving weights to checkpoint
 		if (epoch) % opt.save_interval == 0:
@@ -130,6 +132,8 @@ def main():
 				'acc/train_mAP', train_mAP, global_step=epoch)
 			summary_writer.add_scalar(
 				'acc/val_mAP', val_mAP, global_step=epoch)
+			summary_writer.add_scalar(
+				'lr_rate', lr, global_step=epoch)
 
 			state = {'epoch': epoch, 'model_state_dict': model.state_dict(),
 					'optimizer_state_dict': optimizer.state_dict()}
