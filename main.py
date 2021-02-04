@@ -38,7 +38,7 @@ def main():
 		#transforms.RandomCrop(32, padding=3),
 		transforms.Resize((opt.img_H, opt.img_W)),
 		transforms.RandomHorizontalFlip(),
-		transforms.RandomRotation(10),
+		# transforms.RandomRotation(10),
 		transforms.ToTensor(),
 		transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[
 			0.229, 0.224, 0.225])
