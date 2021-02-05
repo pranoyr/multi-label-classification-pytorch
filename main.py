@@ -95,7 +95,7 @@ def main():
 	# 		nesterov=opt.nesterov)
 	# criterion = nn.CrossEntropyLoss()
 	# define optimizer and criterion
-	optimizer = optim.Adam(model.parameters(), weight_decay=opt.weight_decay)
+	optimizer = optim.Adam(model.parameters(), weight_decay=opt.wt_decay)
 	scheduler = lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=opt.lr_patience)
 	# loss function
 	criterion = BCEWithLogitsLoss()

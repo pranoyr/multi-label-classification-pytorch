@@ -43,7 +43,7 @@ def parse_opts():
 						default='vehicle_attributes', help="Dataset type")
 	parser.add_argument("--num_classes", type=int,
 						default=5, help="Number of classes")
-	parser.add_argument("--weight_decay", type=float,
-						default=5e-4, help="Weight decay")
+	parser.add_argument("--wt_decay", type=float,
+						default=5e-4, help="weight decay")
 	opt = parser.parse_args()
 	return opt
