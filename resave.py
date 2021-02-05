@@ -56,7 +56,7 @@ def main():
 	# load weights
 	checkpoint = torch.load('/home/neuroplex/code/internship/pauls/multi-label-classification-pytorch/models/saved/model20.pth')
 	model.load_state_dict(checkpoint['model_state_dict'])
-	torch.save(model.state_dict(), 'vehicle_classifier.pth')
+	torch.save(model.state_dict(), 'vehicle_classifier.pth', _use_new_zipfile_serialization=False)
 
 	
 
