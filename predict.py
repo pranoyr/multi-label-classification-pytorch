@@ -54,7 +54,7 @@ def main():
     # define model
     model = resnet18(num_classes=opt.num_classes)
     # load weights
-    checkpoint = torch.load('/Users/pranoyr/Downloads/model20.pth', map_location='cpu')
+    checkpoint = torch.load('/home/neuroplex/code/internship/pauls/multi-label-classification-pytorch/models/saved/model20.pth', map_location='cpu')
     model.load_state_dict(checkpoint['model_state_dict'])
 
     # checkpoint = torch.load('/Users/pranoyr/Desktop/weights/vehicle_classifier.pth', map_location='cpu')
@@ -65,7 +65,7 @@ def main():
     model.eval()
 
     #print(class_to_idx)
-    img = cv2.imread('/Users/pranoyr/Desktop/reid/0.png')
+    img = cv2.imread('/home/neuroplex/code/internship/pauls/img/cctv_car_white_hb.jpg')
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = Image.fromarray(img)
     # img = Image.open('./images/sample6.jpg')
