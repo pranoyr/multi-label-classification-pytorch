@@ -54,9 +54,9 @@ def main():
 	# define model
 	model = resnet18(num_classes=19)
 	# load weights
-	checkpoint = torch.load('/Users/pranoyr/Desktop/weights/vehicle_model_classifier.pth', map_location='cpu')
+	checkpoint = torch.load('/home/neuroplex/code/internship/pauls/multi-label-classification-pytorch/models/saved/model20.pth')
 	model.load_state_dict(checkpoint['model_state_dict'])
-	torch.save(model.state_dict(), '/Users/pranoyr/Downloads/vehicle_classifier.pth')
+	torch.save(model.state_dict(), 'vehicle_classifier.pth')
 
 	
 

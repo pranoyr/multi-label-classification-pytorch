@@ -54,8 +54,11 @@ def main():
     # define model
     model = resnet18(num_classes=opt.num_classes)
     # load weights
-    checkpoint = torch.load('/Users/pranoyr/Downloads/model20.pth', map_location='cpu')
-    model.load_state_dict(checkpoint['model_state_dict'])
+    # checkpoint = torch.load('/Users/pranoyr/Downloads/model20.pth', map_location='cpu')
+    # model.load_state_dict(checkpoint['model_state_dict'])
+
+    checkpoint = torch.load('/Users/pranoyr/Desktop/weights/vehicle_classifier.pth', map_location='cpu')
+    model.load_state_dict(checkpoint)
 
     model = model.to(device)
 
