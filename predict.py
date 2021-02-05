@@ -18,7 +18,7 @@ from validation import val_epoch
 from opts import parse_opts
 from torch.optim import lr_scheduler
 from dataset import get_training_set, get_validation_set
-from datasets.human_attributes import class_mapping
+from datasets.veri_vehicle_attributes import class_mapping
 from PIL import Image
 
 
@@ -54,7 +54,7 @@ def main():
     # define model
     model = resnet18(num_classes=opt.num_classes)
     # load weights
-    checkpoint = torch.load('/Volumes/Passport/Neuroplex/human_attr.pth', map_location='cpu')
+    checkpoint = torch.load('/Users/pranoyr/Downloads/model20.pth', map_location='cpu')
     model.load_state_dict(checkpoint['model_state_dict'])
 
     model = model.to(device)
@@ -62,7 +62,7 @@ def main():
     model.eval()
 
     #print(class_to_idx)
-    img = cv2.imread('./images/sample.jpg')
+    img = cv2.imread('/Users/pranoyr/Desktop/reid/0.png')
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = Image.fromarray(img)
     # img = Image.open('./images/sample6.jpg')
@@ -71,8 +71,8 @@ def main():
     with torch.no_grad():
         outputs = model(img)
         outputs = torch.sigmoid(outputs)
-        scores, indices = torch.topk(outputs, dim=1, k=opt.num_classes)
-        mask = scores > 0.7
+        scores, indices = torch.topk(outputs, dim=1, k=2)
+        mask = scores > 0.5
         preds = indices[mask]
 
         preds = [idx_to_class[label.item()] for label in preds]
