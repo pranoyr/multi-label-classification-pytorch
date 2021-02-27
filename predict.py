@@ -54,7 +54,7 @@ def main():
     # define model
     model = resnet18(num_classes=opt.num_classes)
     # load weights
-    checkpoint = torch.load('/Users/pranoyr/Downloads/model20.pth', map_location='cpu')
+    checkpoint = torch.load('/Users/pranoyr/Downloads/model100.pth', map_location='cpu')
     model.load_state_dict(checkpoint['model_state_dict'])
 
     # checkpoint = torch.load('/Users/pranoyr/Desktop/weights/vehicle_classifier.pth', map_location='cpu')
@@ -65,9 +65,10 @@ def main():
     model.eval()
 
     #print(class_to_idx)
-    img = cv2.imread('/Users/pranoyr/Desktop/reid/0.png')
+    img = cv2.imread('/Users/pranoyr/Desktop/reid/c2.png')
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = Image.fromarray(img)
+    # img = img.to(device)
     # img = Image.open('./images/sample6.jpg')
     img = transform(img)
     img = torch.unsqueeze(img, dim=0)
@@ -77,7 +78,7 @@ def main():
         scores, indices = torch.topk(outputs, dim=1, k=2)
         mask = scores > 0.5
         preds = indices[mask]
-
+    
         preds = [idx_to_class[label.item()] for label in preds]
         print(preds)
 
